@@ -184,17 +184,39 @@
                                         <Storyboard>
                                             <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Ripple"
                                                                            Storyboard.TargetProperty="Opacity">
-                                                <DiscreteDoubleKeyFrame KeyTime="0:0:0"
-                                                                        Value="0.26" />
+                                                <LinearDoubleKeyFrame KeyTime="0:0:0.35"
+                                                                      Value="0" />
+                                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.45"
+                                                                        Value="0" />
+                                                <LinearDoubleKeyFrame KeyTime="0:0:0.6"
+                                                                      Value="0.26" />
                                             </DoubleAnimationUsingKeyFrames>
-                                            <DoubleAnimation Storyboard.TargetName="Ripple"
-                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)"
-                                                             To="1"
-                                                             Duration="0:0:0.3" />
-                                            <DoubleAnimation Storyboard.TargetName="Ripple"
-                                                             Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)"
-                                                             To="1"
-                                                             Duration="0:0:0.3" />
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Ripple"
+                                                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleX)">
+                                                <LinearDoubleKeyFrame KeyTime="0:0:0.4"
+                                                                      Value="1.5" />
+                                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.45"
+                                                                        Value="0" />
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.6"
+                                                                      Value="1">
+                                                    <EasingDoubleKeyFrame.EasingFunction>
+                                                        <CircleEase EasingMode="EaseOut" />
+                                                    </EasingDoubleKeyFrame.EasingFunction>
+                                                </EasingDoubleKeyFrame>
+                                            </DoubleAnimationUsingKeyFrames>
+                                            <DoubleAnimationUsingKeyFrames Storyboard.TargetName="Ripple"
+                                                                           Storyboard.TargetProperty="(UIElement.RenderTransform).(ScaleTransform.ScaleY)">
+                                                <LinearDoubleKeyFrame KeyTime="0:0:0.4"
+                                                                      Value="1.5" />
+                                                <DiscreteDoubleKeyFrame KeyTime="0:0:0.45"
+                                                                        Value="0" />
+                                                <EasingDoubleKeyFrame KeyTime="0:0:0.6"
+                                                                      Value="1">
+                                                    <EasingDoubleKeyFrame.EasingFunction>
+                                                        <CircleEase EasingMode="EaseOut" />
+                                                    </EasingDoubleKeyFrame.EasingFunction>
+                                                </EasingDoubleKeyFrame>
+                                            </DoubleAnimationUsingKeyFrames>
                                         </Storyboard>
                                     </VisualTransition>
                                 </VisualStateGroup.Transitions>

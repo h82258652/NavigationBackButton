@@ -9,8 +9,25 @@
         <ResourceDictionary Source="NavigationBackButtonStyle.xaml" />
     </Page.Resources>
     <Grid Background="LightBlue">
-        <Button Style="{StaticResource NavigationBackButtonStyle}"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center" />
+        <Grid HorizontalAlignment="Center"
+              VerticalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0"
+                        Orientation="Vertical">
+                <Button Style="{StaticResource NavigationBackButtonStyle}" />
+                <TextBlock Text="Normal"
+                           TextAlignment="Center" />
+            </StackPanel>
+            <StackPanel Grid.Column="1"
+                        Orientation="Vertical">
+                <Button IsEnabled="False"
+                        Style="{StaticResource NavigationBackButtonStyle}" />
+                <TextBlock Text="Disabled"
+                           TextAlignment="Center" />
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
